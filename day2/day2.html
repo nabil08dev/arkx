@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Factorial
+let num = 5;
+function factorial(num) {
+let total = 1;
+for (let i = 1; i <= num; i++) {
+  total = total * i;
+}
+return total }
+
+//How many digits ?
+
+var num1 = 123542;
+var count = 0;
+function digits(n,m){
+    while (num1 !== 0) {
+    
+  num1 = Math.floor(num1 / 10); 
+  count++;                   
+}
+return count
+}
+
+
+console.log("Number of digits:", count); 
+
+//draw 
+let num2 = 4;
+for (let i = 1; i <= num2; i++) {
+    let spaces = " ".repeat(num2 - i);        
+  let stars = "*".repeat(2 * i - 1);          
+  console.log(spaces + stars);
+
+}
+
+function max(a, b, c) {
+  let max = a;
+  if (b > max) {
+    max = b;
+  }
+  if (c > max) {
+    max = c;
+  }
+  return max;
+}
+
+let number=3;
+function numberToDay(number) {
+  switch (number) {
+    case 1:
+      return "Sunday";
+    case 2:
+      return "Monday";
+    case 3:
+      return "Tuesday";
+    case 4:
+      return "Wednesday";
+    case 5:
+      return "Thursday";
+    case 6:
+      return "Friday";
+    case 7:
+      return "Saturday";
+    default:
+      return "Invalid number. Please enter a number between 1 and 7.";
+  }
+}
+function combination(n, p) {
+  if (p > n || n < 0 || p < 0) {
+    return "Invalid input: p should be ≤ n and both should be ≥ 0";
+  }
+
+  return factorial(n) / (factorial(p) * factorial(n - p));
+}
+
+
+function calculator(num1, num2, operator) {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    case '/':
+      if (num2 === 0) return "Error: Division by zero";
+      return num1 / num2;
+    default:
+      return "Error: Unsupported operator";
+  }
+}
+
+
+
+
+ console.log(factorial(num))
+console.log(digits(num1,count))
+console.log(numberToDay(number))
+console.log(max(num,number,num2))
+console.log( combination(5,2))
+console.log(calculator(5, 3, '+'));  
+console.log(calculator(10, 4, '-')); 
+console.log(calculator(6, 7, '*'));  
+console.log(calculator(20, 5, '/')); 
+</script>
+</html>
