@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const cahracter={
+        firstname:"monkey",
+        lastName : "d-luffy",
+        age : 20,
+        fullName(){
+           return this.firstname+" "+this.lastName
+        }
+    }
+    console.log(cahracter.fullName())
+    class person{
+        constructor(name,age){
+            this.name=name,
+            this.age=age
+
+        }
+        older(p){
+            if (p.age>this.age){
+                console.log(p.name+" is older than"+this.name)
+            }else{
+                 console.log(this.name+" is older than"+p.name)
+
+            }
+        }
+    }
+    const person01=new person("zorro", 30)
+    const person02= new person("sanji",27)
+    person01.older(person02);
+     
+   const array = [4, 2, 2, 7, 2];
+
+function getMostFrequent(array) {
+    let freq = {};
+    let maxCount = 0;
+    let mostFrequent = array[0];
+
+    for (let num of array) {
+        freq[num] = (freq[num] || 0) + 1;
+
+        if (freq[num] > maxCount) {
+            maxCount = freq[num];
+            mostFrequent = num;
+        }
+    }
+
+    return mostFrequent;
+}
+
+console.log(getMostFrequent(array)); 
+
+</script>
+</html>
