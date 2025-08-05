@@ -54,20 +54,26 @@ console.log(groupByGenre());
 
 
 function sortBooksByPrice() {
- const sortedBooks = [];
-  for (let key in books) {
-    sortedBooks.push(books[key]);
+
+  let sortedBooks = [];
+  for (let i = 0; i < books.length; i++) {
+    sortedBooks[i] = books[i];
   }
+
   for (let i = 0; i < sortedBooks.length - 1; i++) {
-    for (let j = i + 1; j < sortedBooks.length; j++) {
-      if (sortedBooks[i].price > sortedBooks[j].price) {
-        const temp = sortedBooks[i];
-        sortedBooks[i] = sortedBooks[j];
-        sortedBooks[j] = temp;
+    for (let j = 0; j < sortedBooks.length - 1 - i; j++) {
+      if (sortedBooks[j].price > sortedBooks[j + 1].price) {
+
+        let temp = sortedBooks[j];
+        sortedBooks[j] = sortedBooks[j + 1];
+        sortedBooks[j + 1] = temp;
       }
     }
   }
-  return sortedBooks;}
+
+  return sortedBooks;
+}
+
 console.log(sortBooksByPrice())
 /*
 (function main() {
