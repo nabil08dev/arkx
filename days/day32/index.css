@@ -1,0 +1,963 @@
+nav{
+    background-color: rgb(28, 2, 68);
+}
+/* Page background gradient */
+body{
+    background: linear-gradient(180deg,#1c0244 0%, #004D98 50%, #A50044  100%);
+    min-height: 100vh;
+}
+ul{
+    display: grid;
+
+}
+
+ul{
+    justify-content:start
+}
+#first-nav{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+#logo{
+    width: 10%;
+    height: 90%;
+}
+li{
+    display: inline-block;
+
+}
+img{
+    width: 30%;
+    height: 30%;
+}
+
+/* Header */
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#navbar{
+    background: rgb(28, 2, 68);
+    color: #ffffff;
+    border-radius:0px 0px  20px 20px;
+}
+
+#navbar ul{
+    list-style: none;
+    margin: 0;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+#navbar a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+#navbar a:hover{
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Logo sizes inside header/footer override global img */
+header #logo{
+    width: 48px;
+    height: 48px;
+}
+
+footer #logo{
+    width: 56px;
+    height: 56px;
+}
+
+/* Search and controls */
+#search-input{
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+#search{
+    padding: 8px 12px;
+    margin-left: 6px;
+    border: none;
+    border-radius: 6px;
+    background: #ffcc00;
+    color: #1c0244;
+    cursor: pointer;
+}
+
+select{
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* Group left part of navbar (logo + links) */
+#left-controls{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    order: 2;
+}
+
+#first-nav{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    order: 1;
+}
+
+/* Footer */
+footer{
+    background: linear-gradient(180deg, #0e0624 0%, #1a0e3a 100%);
+    color: #ffffff;
+    padding: 32px 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 24px;
+    row-gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+footer p, footer span{
+    margin: 0;
+}
+
+footer a{
+    color: #ffcc00;
+    text-decoration: none;
+    margin-right: 12px;
+    font-weight: 500;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+footer a img{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+footer a img:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+footer span{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+footer span br{
+    display: none;
+}
+
+footer p a{
+    margin-left: 8px;
+}
+
+footer p{
+    color: rgba(255, 255, 255, 0.85);
+}
+
+footer > #logo{
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
+/* Place the help links under the middle column on wide screens */
+footer > p:last-of-type{
+    grid-column: 2;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 700px){
+    footer{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    footer span{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    footer > p:last-of-type{
+        grid-column: 1;
+    }
+}
+
+/* Hero Section */
+.hero{
+    position: relative;
+    height: 52vh;
+    min-height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 16px;
+}
+
+.hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Darker at top, fading down */
+
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.352) 60%, rgb(0, 0, 0) 100%);
+}
+
+.hero h1{
+    position: absolute;
+    left: 50%;
+    top: 18%;
+    transform: translateX(-50%);
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(28px, 5vw, 56px);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.55);
+    z-index: 1;
+}
+
+/* Matches Section */
+.matches{
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    overflow-x: auto;
+}
+
+.matches > div,
+.matches .match_card{
+    position: relative;
+    flex: 0 0 375   .438px;
+    height: 335.99px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0e0624;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.matches > div img,
+.matches .match_card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.matches > div::before,
+.matches .match_card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.65) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.matches > div::after,
+.matches .match_card::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.matches > div p,
+.matches > div h6,
+.matches .match_card p,
+.matches .match_card h6{
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+}
+
+.matches > div .card-title,
+.matches .match_card .card-title{
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 6px 10px;
+    color: #ffffff;
+    background: rgba(10,24,66,0.55);
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.matches > div p,
+.matches .match_card p{
+    bottom: 46px;
+    color: #e9efff;
+    background: rgba(10, 24, 66, 0.9); /* dark blue bar */
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+.matches > div h6,
+.matches .match_card h6{
+    bottom: 12px;
+    color: #ffd74d;
+    font-weight: 600;
+    background: rgba(10, 24, 66, 0.9);
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.matches > div:hover img,
+.matches .match_card:hover img{
+    transform: scale(1.06);
+}
+
+.matches > div:hover::after,
+.matches .match_card:hover::after{
+    opacity: 1;
+}
+
+.matches > div:hover p,
+.matches > div:hover h6,
+.matches .match_card:hover p,
+.matches .match_card:hover h6{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Partners Section */
+.partners{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    height: 105px;
+    padding: 0 16px;
+}
+
+/* Leagues Carousel */
+.leagues-carousel {
+    position: relative;
+    width: 100%;
+    padding: 16px;
+    overflow: hidden;
+}
+
+.leagues {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.league-card {
+    flex: 0 0 min(900px, 85%);
+    position: relative;
+    background: linear-gradient(135deg, rgba(10,24,66,0.35) 0%, rgba(0,0,0,0.55) 100%);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 20px;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* left half image+title, right half text */
+    column-gap: 20px;
+    align-items: stretch;
+    overflow: hidden;
+    height: 300px; /* Fixed height to match image */
+}
+
+.league-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+    pointer-events: none;
+}
+
+/* Darken only the left (image) half from top to bottom */
+.league-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+pointer-events: none;
+    z-index: 2;
+}
+
+.league-card .image-container {
+    grid-column: 1;
+    position: relative;
+    width: 100%;
+    height: 100%; /* Take full height of the card */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.league-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: rgba(0,0,0,0.2);
+    display: block;
+}
+
+.league-card h1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 12px 10px;
+    z-index: 3;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.847) 100%);
+    border-radius: 0 0 12px 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.league-card .content-area {
+    grid-column: 2;
+    position: relative;
+    z-index: 1;
+    background: rgba(10,24,66,0.35);
+    padding: 12px 14px;
+    border-radius: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 100%; /* Fill the full height of the card */
+}
+
+.league-card p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.league-card u,
+.league-card h5,
+.league-card a {
+    margin: 0;
+    font-size: 1em;
+}
+
+.league-card u { 
+    display: inline-block;
+    font-weight: 500;
+    color: #ffcc00;
+}
+
+.league-card h5 { 
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #ffffff;
+}
+
+.league-card a { 
+    display: inline-block;
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05em;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: rgba(255, 204, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.league-card a:hover {
+    background: rgba(255, 204, 0, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 204, 0, 0.3);
+}
+
+/* Carousel Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(10, 24, 66, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.carousel-btn:hover {
+    background: rgba(10, 24, 66, 0.95);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: translateY(-50%);
+}
+
+.carousel-btn:disabled:hover {
+    transform: translateY(-50%);
+    background: rgba(10, 24, 66, 0.8);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+}
+
+@media (max-width: 900px) {
+    .league-card {
+        grid-template-columns: 1fr;
+        height: 400px; /* Taller for mobile to accommodate stacked layout */
+    }
+    
+    .league-card .image-container {
+        height: 200px;
+    }
+    
+    .league-card .content-area {
+        grid-column: 1;
+        height: 100%; /* Fill the full height of the card */
+    }
+    
+    .league-card .content-area p {
+        font-size: 1em;
+    }
+    
+    .league-card .content-area u,
+    .league-card .content-area h5,
+    .league-card .content-area a {
+        font-size: 0.95em;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .prev-btn {
+        left: 10px;
+    }
+    
+    .next-btn {
+        right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .leagues-carousel {
+        padding: 8px;
+    }
+    
+    .league-card {
+        flex: 0 0 95%;
+        padding: 16px;
+        height: 380px; /* Slightly shorter for very small screens */
+    }
+    
+    .league-card .image-container {
+        height: 180px;
+    }
+    
+    .league-card .content-area {
+        height: 100%; /* Fill the full height of the card */
+    }
+    
+    .league-card .content-area p {
+        font-size: 0.95em;
+    }
+    
+    .league-card .content-area u,
+    .league-card .content-area h5,
+    .league-card .content-area a {
+        font-size: 0.9em;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    .prev-btn {
+        left: 5px;
+    }
+    
+    .next-btn {
+        right: 5px;
+    }
+}
+
+.partners h1{
+    margin: 0;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.partners a{
+    display: inline-flex;
+    align-items: center;
+}
+
+.partners img{
+    width: auto;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+
+/* Trophies Section */
+.trophies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trophy-card {
+    background: 
+        repeating-linear-gradient(0deg,
+            #A50044 0px, #A50044 3px,
+            #004D98 3px, #004D98 6px,
+            #000000 6px, #000000 9px
+        ),
+        linear-gradient(135deg, rgba(10,24,66,0.35) 0%, rgba(0,0,0,0.55) 100%);
+    background-blend-mode: overlay;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.trophy-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 204, 0, 0.3);
+}
+
+.trophy-card h2 {
+    color: #ffcc00;
+    margin: 0;
+    font-size: 2em;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    flex-shrink: 0;
+}
+
+.trophy-card h3 {
+    color: #ffcc00;
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    text-align: center;
+    flex: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+}
+
+.footer-trophies__trophy-image {
+    width: 60px;
+    height: 60px;
+    fill: #ffcc00;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+}
+
+.trophy-card:hover .footer-trophies__trophy-image {
+    fill: #ffd700;
+    transform: scale(1.1);
+}
+
+/* Mobile Responsive for Trophies */
+@media (max-width: 768px) {
+    .trophies {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 12px;
+    }
+    
+    .trophy-card {
+        height: 80px;
+        padding: 10px;
+    }
+    
+    .trophy-card h3 {
+        font-size: 1em;
+    }
+    
+    .footer-trophies__trophy-image {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trophies {
+        padding: 8px;
+    }
+    
+    .trophy-card {
+        height: 70px;
+        padding: 8px;
+        gap: 8px;
+    }
+    
+    .trophy-card h3 {
+        font-size: 0.9em;
+    }
+    
+    .footer-trophies__trophy-image {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Shirts Section */
+.shirts {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 20px;
+}
+
+.shirt-card {
+    flex: 0 0 300px;
+    height: 500px;
+    background: linear-gradient(135deg, rgba(10,24,66,0.35) 0%, rgba(0,0,0,0.55) 100%);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 16px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: center;
+}
+
+.shirt-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 204, 0, 0.3);
+}
+
+.shirt-card .image-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shirt-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.shirt-card img:first-child {
+    opacity: 1;
+    z-index: 1;
+}
+
+.shirt-card img:last-child {
+    opacity: 0;
+    z-index: 2;
+}
+
+.shirt-card:hover img:first-child {
+    opacity: 0;
+}
+
+.shirt-card:hover img:last-child {
+    opacity: 1;
+}
+
+.shirt-card h3 {
+    color: #ffcc00;
+    margin: 0 0 12px 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.shirt-card p {
+    color: #e9efff;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+    font-size: 0.9em;
+    background: rgba(10,24,66,0.35);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.shirt-card a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    background: rgba(255, 204, 0, 0.1);
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.shirt-card a:hover {
+    background: #ffcc00;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+}
+
+/* Mobile Responsive for Shirts */
+@media (max-width: 768px) {
+    .shirts {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+    }
+    
+    .shirt-card {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 350px;
+        height: 450px;
+    }
+    
+    .shirt-card .image-container {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shirts {
+        padding: 12px;
+    }
+    
+    .shirt-card {
+        padding: 12px;
+        height: 400px;
+    }
+    
+    .shirt-card .image-container {
+        height: 180px;
+    }
+    
+    .shirt-card h3 {
+        font-size: 1.1em;
+    }
+    
+    .shirt-card p {
+        font-size: 0.85em;
+    }
+}
